@@ -1,0 +1,644 @@
+/* ============================================================
+   projects.css — Aaron Joseph Antonio Portfolio
+   Magazine layout: 1 big card + 2 small stacked
+   ============================================================ */
+
+/* ===== PAGE HERO ===== */
+.page-hero {
+    padding-top: 140px;
+    padding-bottom: var(--sp-6);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: 'WORK';
+    position: absolute;
+    top: 55px;
+    right: var(--sp-4);
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 16vw, 12rem);
+    color: rgba(245, 158, 11, 0.028);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.04em;
+    z-index: 0;
+}
+
+.page-hero .section-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(var(--text-4xl), 7vw, var(--text-6xl));
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+}
+
+.page-hero-title em { font-style: italic; color: var(--accent); }
+
+.page-hero-desc {
+    font-size: var(--text-lg);
+    color: var(--muted);
+    margin-top: var(--sp-1);
+    padding-left: var(--sp-3);
+    border-left: 2px solid var(--accent);
+    max-width: 520px;
+}
+
+.page-hero-rule {
+    max-width: var(--max-w);
+    margin: var(--sp-5) auto 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border) 30%, rgba(255,255,255,0.03) 100%);
+    width: calc(100% - var(--sp-4) * 2);
+}
+
+/* ===== SECTION ===== */
+.projects-section {
+    padding: var(--sp-7) 0;
+}
+
+/* ============================================================
+   FEATURED PROJECTS SECTION
+   ============================================================ */
+
+.proj-featured {
+    padding: var(--sp-7) 0 var(--sp-5);
+}
+
+/* ===== FEAT CARD BASE ===== */
+.feat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--sp-4);
+    transition: border-color var(--transition), border-left-color var(--transition), transform var(--transition);
+}
+
+.feat-card:hover {
+    border-color: rgba(245, 158, 11, 0.2);
+    border-left-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+/* ===== FEAT CARD LEFT (big, vertical) ===== */
+.feat-card--left {
+    flex-direction: column;
+}
+
+.feat-card--left .feat-img-wrap {
+    aspect-ratio: 16 / 7;
+}
+
+.feat-card--left .feat-title {
+    font-size: var(--text-3xl);
+}
+
+/* ===== FEAT CARD RIGHT (horizontal: image left, content right) ===== */
+.feat-card--right {
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.feat-card--right .feat-img-wrap {
+    flex: 0 0 45%;
+    aspect-ratio: unset;
+    min-height: 280px;
+}
+
+.feat-card--right .feat-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.feat-card--right .feat-title {
+    font-size: var(--text-2xl);
+}
+
+/* ===== FEAT IMAGE WRAP ===== */
+.feat-img-wrap {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #161616, #1e1e1e);
+    flex-shrink: 0;
+}
+
+.feat-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.55s ease;
+}
+
+.feat-card:hover .feat-img {
+    transform: scale(1.04);
+}
+
+/* ===== FEAT PLACEHOLDER ===== */
+.feat-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #161616, #1e1e1e);
+}
+
+.feat-placeholder i {
+    font-size: 4rem;
+    color: var(--accent);
+    opacity: 0.1;
+}
+
+/* ===== FEAT NUM ===== */
+.feat-num {
+    position: absolute;
+    bottom: var(--sp-1);
+    right: var(--sp-2);
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 10vw, 8rem);
+    color: rgba(245, 158, 11, 0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ===== FEAT BADGE ===== */
+.feat-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #111;
+    background: var(--accent);
+    padding: 0.28rem 0.65rem;
+    border-radius: 4px;
+    margin-bottom: var(--sp-1);
+    align-self: flex-start;
+}
+
+/* ===== FEAT BODY ===== */
+.feat-body {
+    padding: var(--sp-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    flex: 1;
+}
+
+/* ===== FEAT TITLE ===== */
+.feat-title {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+/* ===== FEAT DESC ===== */
+.feat-desc {
+    font-size: var(--text-sm);
+    color: var(--muted);
+    line-height: 1.8;
+    flex: 1;
+}
+
+/* ===== FEAT TAGS ===== */
+.feat-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.feat-tags span {
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 0.18rem 0.55rem;
+    background: var(--accent-dim);
+    color: var(--accent);
+    border-radius: 100px;
+}
+
+/* ===== FEAT LINKS ===== */
+.feat-links {
+    display: flex;
+    gap: var(--sp-2);
+    flex-wrap: wrap;
+    padding-top: var(--sp-3);
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+}
+
+/* ============================================================
+   MORE PROJECTS SECTION
+   ============================================================ */
+
+.proj-more {
+    padding: var(--sp-5) 0 var(--sp-7);
+}
+
+.proj-more-header {
+    margin-bottom: var(--sp-5);
+}
+
+/* ===== PROJ MINI GRID ===== */
+.proj-mini-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--sp-3);
+}
+
+/* ===== PROJ MINI CARD ===== */
+.proj-mini-card {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    border-left: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color var(--transition), border-left-color var(--transition), transform var(--transition);
+}
+
+.proj-mini-card:hover {
+    border-color: rgba(245, 158, 11, 0.2);
+    border-left-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+/* ===== PROJ MINI IMAGE WRAP ===== */
+.proj-mini-img-wrap {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #161616, #1e1e1e);
+    aspect-ratio: 16 / 8;
+    flex-shrink: 0;
+}
+
+.proj-mini-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.55s ease;
+}
+
+.proj-mini-card:hover .proj-mini-img {
+    transform: scale(1.04);
+}
+
+.proj-mini-num {
+    position: absolute;
+    bottom: var(--sp-1);
+    right: var(--sp-2);
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: rgba(245, 158, 11, 0.06);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ===== PROJ MINI BODY ===== */
+.proj-mini-body {
+    padding: var(--sp-3) var(--sp-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-1);
+    flex: 1;
+}
+
+.proj-mini-body h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: var(--sp-1);
+}
+
+.proj-mini-body p {
+    font-size: var(--text-sm);
+    color: var(--muted);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.proj-mini-body .feat-links {
+    margin-top: var(--sp-2);
+}
+
+/* ===== PROJ LINK ===== */
+.proj-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--accent);
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.proj-link:hover { gap: 0.6rem; }
+
+.proj-link--ghost { color: var(--muted); }
+.proj-link--ghost:hover { color: var(--text); }
+
+/* ===== RESPONSIVE — feat cards ===== */
+@media (max-width: 900px) {
+    .feat-card--right {
+        flex-direction: column;
+    }
+    .feat-card--right .feat-img-wrap {
+        flex: unset;
+        aspect-ratio: 16 / 9;
+        min-height: unset;
+    }
+    .feat-card--left .feat-title,
+    .feat-card--right .feat-title {
+        font-size: var(--text-2xl);
+    }
+    .proj-mini-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .feat-body { padding: var(--sp-3); }
+    .feat-links { flex-direction: column; }
+    .feat-links .btn { justify-content: center; }
+    .feat-card--left .feat-img-wrap { aspect-ratio: 4 / 3; }
+}
+
+/* ===== MAGAZINE GRID ===== */
+/* Left: 1 tall big card | Right: 2 small cards stacked */
+.mag-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-4);
+    align-items: stretch;
+}
+
+.mag-col-small {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+}
+
+/* ===== BASE CARD ===== */
+.proj-card {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    border-left: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color var(--transition), border-left-color var(--transition), transform var(--transition);
+}
+
+.proj-card:hover {
+    border-color: rgba(245, 158, 11, 0.2);
+    border-left-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+/* ===== BIG CARD ===== */
+.proj-card--big {
+    height: 100%;
+}
+
+.proj-card--big .proj-img-wrap {
+    aspect-ratio: 4 / 3;        /* tall ratio for the big card */
+}
+
+.proj-card--big .proj-title {
+    font-size: var(--text-3xl);
+}
+
+.proj-card--big .proj-desc {
+    display: block;             /* show full desc on big card */
+}
+
+/* ===== SMALL CARDS ===== */
+.proj-card--small {
+    flex: 1;
+}
+
+.proj-card--small .proj-img-wrap {
+    aspect-ratio: 16 / 7;       /* shorter image for small cards */
+}
+
+.proj-card--small .proj-title {
+    font-size: var(--text-xl);
+}
+
+/* ===== IMAGE WRAP ===== */
+.proj-img-wrap {
+    position: relative;
+    overflow: hidden;
+    background: #1a1a1a;
+    flex-shrink: 0;
+}
+
+.proj-img-wrap--dark {
+    background: linear-gradient(135deg, #1a1a1a, #202020);
+}
+
+.proj-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.55s ease;
+}
+
+.proj-card:hover .proj-img { transform: scale(1.04); }
+
+.proj-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proj-placeholder i {
+    font-size: 3.5rem;
+    color: var(--accent);
+    opacity: 0.15;
+}
+
+.proj-num {
+    position: absolute;
+    bottom: var(--sp-1);
+    right: var(--sp-2);
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 10vw, 8rem);
+    color: rgba(245, 158, 11, 0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.proj-badge {
+    position: absolute;
+    top: var(--sp-2);
+    left: var(--sp-2);
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #111;
+    background: var(--accent);
+    padding: 0.28rem 0.65rem;
+    border-radius: 4px;
+}
+
+/* ===== CARD BODY ===== */
+.proj-body {
+    padding: var(--sp-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    flex: 1;
+}
+
+.proj-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.proj-tags span {
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 0.18rem 0.55rem;
+    background: var(--accent-dim);
+    color: var(--accent);
+    border-radius: 100px;
+}
+
+.proj-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.proj-desc {
+    font-size: var(--text-sm);
+    color: var(--muted);
+    line-height: 1.75;
+    flex: 1;
+}
+
+.proj-links {
+    display: flex;
+    gap: var(--sp-2);
+    flex-wrap: wrap;
+    padding-top: var(--sp-2);
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+}
+
+/* ===== DIVIDER ===== */
+.proj-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    margin: var(--sp-6) 0 var(--sp-5);
+}
+
+.proj-divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* ===== 2-COL GRID (remaining) ===== */
+.proj-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+}
+
+.proj-grid .proj-img-wrap {
+    aspect-ratio: 16 / 9;
+}
+
+/* ===== EMPTY SLOT ===== */
+.proj-card--empty {
+    border-style: dashed;
+    border-color: rgba(255,255,255,0.06);
+    background: transparent;
+    min-height: 200px;
+    cursor: default;
+}
+
+.proj-card--empty:hover {
+    transform: none;
+    border-color: rgba(245,158,11,0.15);
+}
+
+.proj-empty-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-2);
+    padding: var(--sp-5);
+    color: rgba(255,255,255,0.15);
+}
+
+.proj-empty-inner i { font-size: 1.5rem; }
+.proj-empty-inner span { font-size: var(--text-sm); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .mag-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mag-col-small {
+        flex-direction: row;
+    }
+
+    .proj-card--big .proj-img-wrap { aspect-ratio: 16 / 9; }
+    .proj-card--small .proj-img-wrap { aspect-ratio: 16 / 9; }
+    .proj-card--big .proj-title { font-size: var(--text-2xl); }
+}
+
+@media (max-width: 640px) {
+    .mag-col-small { flex-direction: column; }
+    .proj-grid { grid-template-columns: 1fr; }
+    .proj-num { font-size: 3rem; }
+    .proj-body { padding: var(--sp-3); }
+    .proj-links { flex-direction: column; }
+    .proj-links .btn { justify-content: center; }
+}
