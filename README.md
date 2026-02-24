@@ -16,7 +16,7 @@ A modern, responsive portfolio website showcasing frontend & backend development
 
 ```
 FINALS PORTFOLIO/
-├── home.html              # Landing page with hero, stats, CTA
+├── index.html             # Landing page with hero, stats, CTA
 ├── about.html             # About page with bio & skills
 ├── projects.html          # Projects gallery (magazine layout)
 ├── contact.html           # Contact form
@@ -39,18 +39,18 @@ Use any HTTP server to serve the folder (required for proper asset loading).
 **Python 3:**
 ```powershell
 python -m http.server 8000
-# Visit http://localhost:8000/home.html
+# Visit http://localhost:8000/index.html
 ```
 
 **Node.js (http-server):**
 ```bash
 npx http-server .
-# Visit http://localhost:8080/home.html
+# Visit http://localhost:8080/index.html
 ```
 
 **VS Code:**
 - Install the "Live Server" extension.
-- Right-click `home.html` → "Open with Live Server".
+- Right-click `index.html` → "Open with Live Server".
 
 ## 🎨 Theme System
 
